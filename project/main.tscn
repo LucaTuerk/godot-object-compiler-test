@@ -4,3 +4,9 @@
 
 [node name="Main" type="Node"]
 script = ExtResource("1_ig7tw")
+
+[node name="ExampleNode" type="ExampleNode" parent="."]
+int_property = 926101806
+long_property = 3834021429396058413
+int_property = 926101806
+long_property = 3834021429396058413
