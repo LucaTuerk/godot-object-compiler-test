@@ -5,7 +5,9 @@ cmake_minimum_required(VERSION 3.17)
 if(CMAKE_C_COMPILER)
 endif()
 
-set(LIBNAME "EXTENSION-NAME" CACHE STRING "The name of the library")
+add_subdirectory(godot-object-compiler)
+
+set(LIBNAME "GOC_TEST" CACHE STRING "The name of the library")
 set(GODOT_PROJECT_DIR "project" CACHE STRING "The directory of a Godot project folder")
 
 # Make sure all the dependencies are satisfied
@@ -45,12 +47,16 @@ project(godot-cpp-template
 
 add_library(${LIBNAME} SHARED)
 
+file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS "src/*.cpp")
+
 target_sources(${LIBNAME}
     PRIVATE
-    src/register_types.cpp
-    src/register_types.h
-    src/example_class.cpp
-    src/example_class.h
+    ${SOURCES}
+)
+
+target_include_directories(${LIBNAME}
+        PRIVATE
+        ${CMAKE_CURRENT_LIST_DIR}/src
 )
 
 # Fetch a list of the xml files to use for documentation and add to our target
@@ -76,6 +82,9 @@ set_target_properties(${LIBNAME}
     PREFIX ""
     OUTPUT_NAME "${LIBNAME}${GODOTCPP_SUFFIX}"
 )
+
+include(tools/autogoc.cmake)
+target_autogoc(${LIBNAME} ${CMAKE_CURRENT_LIST_DIR}/src)
 
 set(GODOT_PROJECT_BINARY_DIR "${PROJECT_SOURCE_DIR}/${GODOT_PROJECT_DIR}/bin/${GODOTCPP_PLATFORM}")
 
