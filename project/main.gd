@@ -1,16 +1,17 @@
 extends Node
 
-var example_node : ExampleNode
+var example_node : Node
+
+func quit(result_code : int) -> void:
+	get_tree().quit(result_code)
+	queue_free()
 
 func _ready() -> void:
 	example_node = ClassDB.instantiate("ExampleNode")
 	
 	if example_node == null:
-		printerr("Failed to create ExampleNode")
-		get_tree().quit(1)
-	
+		return quit(1)
 	add_child(example_node)
 	
 func _process(delta: float) -> void:
-	printerr("Success!")
-	get_tree().quit(0)
+	return quit(0)

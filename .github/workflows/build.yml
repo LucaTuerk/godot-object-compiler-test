@@ -53,5 +53,5 @@ jobs:
 
       - name: Run Project
         run: |
-          godot --headless --path project --editor --quit 
+          godot --headless --path project --editor --quit || true # Godot 4.5.1 crashes after successful import, ignore for now
           godot --headless --path project
