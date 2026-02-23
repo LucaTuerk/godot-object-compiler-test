@@ -5,13 +5,29 @@ on:
 
 jobs:
   build-project:
-    name: Build Project
+    name: Build and Run (Linux 🐧)
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
         uses: actions/checkout@v4
         with:
-          submodules: recursive
+          token: ${{secrets.PAT_TOKEN}}
+
+      - name: Checkout Godot Object Compiler
+        uses: actions/checkout@v4
+        with:
+          repository: 'LucaTuerk/godot-object-compiler'
+          submodules: 'recursive'
+          path: 'godot-object-compiler'
+          token: ${{secrets.PAT_TOKEN}}
+
+      - name: Checkout godot-cpp
+        uses: actions/checkout@v4
+        with:
+          repository: 'godotengine/godot-cpp'
+          submodules: 'true'
+          path: 'godot-cpp'
+          ref: '4.5'
           token: ${{secrets.PAT_TOKEN}}
 
       - name: Install Packages
