@@ -8,7 +8,7 @@
 using namespace godot;
 
 #include "example_node.generated.h"
-#include "macros.h"
+#include "godot_object_compiler/macros.h"
 
 GODOT_CLASS();
 class ExampleNode : public Node {
