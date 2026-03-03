@@ -2,6 +2,7 @@
 
 #include "godot_cpp/classes/node.hpp"
 #include "godot_cpp/classes/resource.hpp"
+#include "godot_cpp/variant/aabb.hpp"
 #include "godot_cpp/variant/typed_array.hpp"
 #include "godot_cpp/variant/typed_dictionary.hpp"
 
@@ -13,6 +14,10 @@ using namespace godot;
 GODOT_CLASS();
 class ExampleNode : public Node {
 	GODOT_GENERATED_BODY();
+
+public:
+	GODOT_ENUM();
+	enum Enum { ENUM_VALUE };
 
 	GODOT_PROPERTY();
 	AABB aabb_property;
@@ -139,6 +144,186 @@ class ExampleNode : public Node {
 
 	GODOT_PROPERTY();
 	Vector4i vector4i_property;
+
+	GODOT_PROPERTY(Name("custom_aabb_property"), Get("get_custom_aabb_property"), Set("set_custom_aabb_property"));
+	AABB get_custom_aabb_property() const;
+	void set_custom_aabb_property(const AABB &p_value);
+
+	GODOT_PROPERTY(Name("custom_array_property"), Get("get_custom_array_property"), Set("set_custom_array_property"));
+	Array get_custom_array_property() const;
+	void set_custom_array_property(const Array &p_value);
+
+	GODOT_PROPERTY(Name("custom_typed_array_property"), Get("get_custom_typed_array_property"), Set("set_custom_typed_array_property"));
+	TypedArray<Resource> get_custom_typed_array_property() const;
+	void set_custom_typed_array_property(const TypedArray<Resource> &p_value);
+
+	GODOT_PROPERTY(Name("custom_basis_property"), Get("get_custom_basis_property"), Set("set_custom_basis_property"));
+	Basis get_custom_basis_property() const;
+	void set_custom_basis_property(const Basis &p_value);
+
+	GODOT_PROPERTY(Name("custom_bool_property"), Get("get_custom_bool_property"), Set("set_custom_bool_property"));
+	bool get_custom_bool_property() const;
+	void set_custom_bool_property(const bool &p_value);
+
+	GODOT_PROPERTY(Name("custom_callable_property"), Get("get_custom_callable_property"), Set("set_custom_callable_property"));
+	Callable get_custom_callable_property() const;
+	void set_custom_callable_property(const Callable &p_value);
+
+	GODOT_PROPERTY(Name("custom_color_property"), Get("get_custom_color_property"), Set("set_custom_color_property"));
+	Color get_custom_color_property() const;
+	void set_custom_color_property(const Color &p_value);
+
+	GODOT_PROPERTY(Name("custom_dictionary_property"), Get("get_custom_dictionary_property"), Set("set_custom_dictionary_property"));
+	Dictionary get_custom_dictionary_property() const;
+	void set_custom_dictionary_property(const Dictionary &p_value);
+
+	GODOT_PROPERTY(Name("custom_typed_dictionary_property"), Get("get_custom_typed_dictionary_property"), Set("set_custom_typed_dictionary_property"));
+	TypedDictionary<int, Resource> get_custom_typed_dictionary_property() const;
+	void set_custom_typed_dictionary_property(const TypedDictionary<int, Resource> &p_value);
+
+	GODOT_PROPERTY(Name("custom_float_property"), Get("get_custom_float_property"), Set("set_custom_float_property"));
+	float get_custom_float_property() const;
+	void set_custom_float_property(const float &p_value);
+
+	GODOT_PROPERTY(Name("custom_real_t_property"), Get("get_custom_real_t_property"), Set("set_custom_real_t_property"));
+	real_t get_custom_real_t_property() const;
+	void set_custom_real_t_property(const real_t &p_value);
+
+	GODOT_PROPERTY(Name("custom_double_property"), Get("get_custom_double_property"), Set("set_custom_double_property"));
+	double get_custom_double_property() const;
+	void set_custom_double_property(const double &p_value);
+
+	GODOT_PROPERTY(Name("custom_int_property"), Get("get_custom_int_property"), Set("set_custom_int_property"));
+	int get_custom_int_property() const;
+	void set_custom_int_property(const int &p_value);
+
+	GODOT_PROPERTY(Name("custom_long_property"), Get("get_custom_long_property"), Set("set_custom_long_property"));
+	long get_custom_long_property() const;
+	void set_custom_long_property(const long &p_value);
+
+	GODOT_PROPERTY(Name("custom_node_path_property"), Get("get_custom_node_path_property"), Set("set_custom_node_path_property"));
+	NodePath get_custom_node_path_property() const;
+	void set_custom_node_path_property(const NodePath &p_value);
+
+	GODOT_PROPERTY(Name("custom_object_property"), Get("get_custom_object_property"), Set("set_custom_object_property"));
+	Object *get_custom_object_property() const;
+	void set_custom_object_property(Object *p_value);
+
+	GODOT_PROPERTY(Name("custom_packed_byte_array_property"), Get("get_custom_packed_byte_array_property"), Set("set_custom_packed_byte_array_property"));
+	PackedByteArray get_custom_packed_byte_array_property() const;
+	void set_custom_packed_byte_array_property(const PackedByteArray &p_value);
+
+	GODOT_PROPERTY(Name("custom_packed_color_array_property"), Get("get_custom_packed_color_array_property"), Set("set_custom_packed_color_array_property"));
+	PackedColorArray get_custom_packed_color_array_property() const;
+	void set_custom_packed_color_array_property(const PackedColorArray &p_value);
+
+	GODOT_PROPERTY(Name("custom_packed_float32_array_property"), Get("get_custom_packed_float32_array_property"), Set("set_custom_packed_float32_array_property"));
+	PackedFloat32Array get_custom_packed_float32_array_property() const;
+	void set_custom_packed_float32_array_property(const PackedFloat32Array &p_value);
+
+	GODOT_PROPERTY(Name("custom_packed_float64_array_property"), Get("get_custom_packed_float64_array_property"), Set("set_custom_packed_float64_array_property"));
+	PackedFloat64Array get_custom_packed_float64_array_property() const;
+	void set_custom_packed_float64_array_property(const PackedFloat64Array &p_value);
+
+	GODOT_PROPERTY(Name("custom_packed_int32_array_property"), Get("get_custom_packed_int32_array_property"), Set("set_custom_packed_int32_array_property"));
+	PackedInt32Array get_custom_packed_int32_array_property() const;
+	void set_custom_packed_int32_array_property(const PackedInt32Array &p_value);
+
+	GODOT_PROPERTY(Name("custom_packed_int64_array_property"), Get("get_custom_packed_int64_array_property"), Set("set_custom_packed_int64_array_property"));
+	PackedInt64Array get_custom_packed_int64_array_property() const;
+	void set_custom_packed_int64_array_property(const PackedInt64Array &p_value);
+
+	GODOT_PROPERTY(Name("custom_packed_string_array_property"), Get("get_custom_packed_string_array_property"), Set("set_custom_packed_string_array_property"));
+	PackedStringArray get_custom_packed_string_array_property() const;
+	void set_custom_packed_string_array_property(const PackedStringArray &p_value);
+
+	GODOT_PROPERTY(Name("custom_packed_vector2_array_property"), Get("get_custom_packed_vector2_array_property"), Set("set_custom_packed_vector2_array_property"));
+	PackedVector2Array get_custom_packed_vector2_array_property() const;
+	void set_custom_packed_vector2_array_property(const PackedVector2Array &p_value);
+
+	GODOT_PROPERTY(Name("custom_packed_vector3_array_property"), Get("get_custom_packed_vector3_array_property"), Set("set_custom_packed_vector3_array_property"));
+	PackedVector3Array get_custom_packed_vector3_array_property() const;
+	void set_custom_packed_vector3_array_property(const PackedVector3Array &p_value);
+
+	GODOT_PROPERTY(Name("custom_packed_vector4_array_property"), Get("get_custom_packed_vector4_array_property"), Set("set_custom_packed_vector4_array_property"));
+	PackedVector4Array get_custom_packed_vector4_array_property() const;
+	void set_custom_packed_vector4_array_property(const PackedVector4Array &p_value);
+
+	GODOT_PROPERTY(Name("custom_plane_property"), Get("get_custom_plane_property"), Set("set_custom_plane_property"));
+	Plane get_custom_plane_property() const;
+	void set_custom_plane_property(const Plane &p_value);
+
+	GODOT_PROPERTY(Name("custom_projection_property"), Get("get_custom_projection_property"), Set("set_custom_projection_property"));
+	Projection get_custom_projection_property() const;
+	void set_custom_projection_property(const Projection &p_value);
+
+	GODOT_PROPERTY(Name("custom_quaternion_property"), Get("get_custom_quaternion_property"), Set("set_custom_quaternion_property"));
+	Quaternion get_custom_quaternion_property() const;
+	void set_custom_quaternion_property(const Quaternion &p_value);
+
+	GODOT_PROPERTY(Name("custom_rect2_property"), Get("get_custom_rect2_property"), Set("set_custom_rect2_property"));
+	Rect2 get_custom_rect2_property() const;
+	void set_custom_rect2_property(const Rect2 &p_value);
+
+	GODOT_PROPERTY(Name("custom_rect2i_property"), Get("get_custom_rect2i_property"), Set("set_custom_rect2i_property"));
+	Rect2i get_custom_rect2i_property() const;
+	void set_custom_rect2i_property(const Rect2i &p_value);
+
+	GODOT_PROPERTY(Name("custom_signal_property"), Get("get_custom_signal_property"), Set("set_custom_signal_property"));
+	Signal get_custom_signal_property() const;
+	void set_custom_signal_property(const Signal &p_value);
+
+	GODOT_PROPERTY(Name("custom_string_property"), Get("get_custom_string_property"), Set("set_custom_string_property"));
+	String get_custom_string_property() const;
+	void set_custom_string_property(const String &p_value);
+
+	GODOT_PROPERTY(Name("custom_string_name_property"), Get("get_custom_string_name_property"), Set("set_custom_string_name_property"));
+	StringName get_custom_string_name_property() const;
+	void set_custom_string_name_property(const StringName &p_value);
+
+	GODOT_PROPERTY(Name("custom_transform2D_property"), Get("get_custom_transform2D_property"), Set("set_custom_transform2D_property"));
+	Transform2D get_custom_transform2D_property() const;
+	void set_custom_transform2D_property(const Transform2D &p_value);
+
+	GODOT_PROPERTY(Name("custom_transform3D_property"), Get("get_custom_transform3D_property"), Set("set_custom_transform3D_property"));
+	Transform3D get_custom_transform3D_property() const;
+	void set_custom_transform3D_property(const Transform3D &p_value);
+
+	GODOT_PROPERTY(Name("custom_vector2_property"), Get("get_custom_vector2_property"), Set("set_custom_vector2_property"));
+	Vector2 get_custom_vector2_property() const;
+	void set_custom_vector2_property(const Vector2 &p_value);
+
+	GODOT_PROPERTY(Name("custom_vector2i_property"), Get("get_custom_vector2i_property"), Set("set_custom_vector2i_property"));
+	Vector2i get_custom_vector2i_property() const;
+	void set_custom_vector2i_property(const Vector2i &p_value);
+
+	GODOT_PROPERTY(Name("custom_vector3_property"), Get("get_custom_vector3_property"), Set("set_custom_vector3_property"));
+	Vector3 get_custom_vector3_property() const;
+	void set_custom_vector3_property(const Vector3 &p_value);
+
+	GODOT_PROPERTY(Name("custom_vector3i_property"), Get("get_custom_vector3i_property"), Set("set_custom_vector3i_property"));
+	Vector3i get_custom_vector3i_property() const;
+	void set_custom_vector3i_property(const Vector3i &p_value);
+
+	GODOT_PROPERTY(Name("custom_vector4_property"), Get("get_custom_vector4_property"), Set("set_custom_vector4_property"));
+	Vector4 get_custom_vector4_property() const;
+	void set_custom_vector4_property(const Vector4 &p_value);
+
+	GODOT_PROPERTY(Name("custom_vector4i_property"), Get("get_custom_vector4i_property"), Set("set_custom_vector4i_property"));
+	Vector4i get_custom_vector4i_property() const;
+	void set_custom_vector4i_property(const Vector4i &p_value);
+
+	GODOT_PROPERTY(Name("custom_node_property"), Get("get_custom_node_property"), Set("set_custom_node_property"));
+	Node *get_custom_node_property() const;
+	void set_custom_node_property(Node *p_value);
+
+	GODOT_PROPERTY(Name("custom_resource_property"), Get("get_custom_resource_property"), Set("set_custom_resource_property"));
+	Ref<Resource> get_custom_resource_property() const;
+	void set_custom_resource_property(const Ref<Resource> &p_value);
+
+	GODOT_PROPERTY(Name("custom_enum_property"), Get("get_custom_enum_property"), Set("set_custom_enum_property"));
+	Enum get_custom_enum_property() const;
+	void set_custom_enum_property(Enum p_value);
 
 	GODOT_FUNCTION();
 	AABB aabb_function() { return {}; }
@@ -397,5 +582,11 @@ class ExampleNode : public Node {
 
 	GODOT_SIGNAL();
 	void resource_signal(Ref<Resource> p_param);
+
+	Enum enum_property = ENUM_VALUE;
+
+	Ref<Resource> resource_property;
+
+	Node *node_property;
 };
 GODOT_GENERATED_GLOBAL();

@@ -33,7 +33,7 @@ func _process(_delta: float) -> void:
 	if not "bool_property" in example_node:
 		print("property not found")
 		return quit(1)
-		
+
 	if not "callable_property" in example_node:
 		print("property not found")
 		return quit(1)
@@ -181,7 +181,355 @@ func _process(_delta: float) -> void:
 	if not "vector4i_property" in example_node:
 		print("property not found")
 		return quit(1)
-		
+
+	if not "custom_aabb_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_array_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_typed_array_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_basis_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_bool_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_callable_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_color_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_dictionary_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_typed_dictionary_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_float_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_real_t_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_double_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_int_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_long_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_node_path_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_object_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_packed_byte_array_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_packed_color_array_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_packed_float32_array_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_packed_float64_array_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_packed_int32_array_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_packed_int64_array_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_packed_string_array_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_packed_vector2_array_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_packed_vector3_array_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_packed_vector4_array_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_plane_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_projection_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_quaternion_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_rect2_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_rect2i_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_signal_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_string_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_string_name_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_transform2D_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_transform3D_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_vector2_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_vector2i_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_vector3_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_vector3i_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_vector4_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_vector4i_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_object_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_resource_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if not "custom_enum_property" in example_node:
+		print("property not found")
+		return quit(1)
+
+	if example_node.aabb_property != example_node.custom_aabb_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.array_property != example_node.custom_array_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.typed_array_property != example_node.custom_typed_array_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.basis_property != example_node.custom_basis_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.bool_property != example_node.custom_bool_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.callable_property != example_node.custom_callable_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.color_property != example_node.custom_color_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.dictionary_property != example_node.custom_dictionary_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.typed_dictionary_property != example_node.custom_typed_dictionary_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.float_property != example_node.custom_float_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.real_t_property != example_node.custom_real_t_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.double_property != example_node.custom_double_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.int_property != example_node.custom_int_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.long_property != example_node.custom_long_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.node_path_property != example_node.custom_node_path_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.object_property != example_node.custom_object_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.packed_byte_array_property != example_node.custom_packed_byte_array_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.packed_color_array_property != example_node.custom_packed_color_array_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.packed_float32_array_property != example_node.custom_packed_float32_array_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.packed_float64_array_property != example_node.custom_packed_float64_array_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.packed_int32_array_property != example_node.custom_packed_int32_array_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.packed_int64_array_property != example_node.custom_packed_int64_array_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.packed_string_array_property != example_node.custom_packed_string_array_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.packed_vector2_array_property != example_node.custom_packed_vector2_array_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.packed_vector3_array_property != example_node.custom_packed_vector3_array_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.packed_vector4_array_property != example_node.custom_packed_vector4_array_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.plane_property != example_node.custom_plane_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.projection_property != example_node.custom_projection_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.quaternion_property != example_node.custom_quaternion_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.rect2_property != example_node.custom_rect2_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.rect2i_property != example_node.custom_rect2i_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.signal_property != example_node.custom_signal_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.string_property != example_node.custom_string_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.string_name_property != example_node.custom_string_name_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.transform2D_property != example_node.custom_transform2D_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.transform3D_property != example_node.custom_transform3D_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.vector2_property != example_node.custom_vector2_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.vector2i_property != example_node.custom_vector2i_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.vector3_property != example_node.custom_vector3_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.vector3i_property != example_node.custom_vector3i_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.vector4_property != example_node.custom_vector4_property:
+		print("properties do not match")
+		return quit(1)
+
+	if example_node.vector4i_property != example_node.custom_vector4i_property:
+		print("properties do not match")
+		return quit(1)
+
 	if not "aabb_function" in example_node:
 		print("function not found")
 		return quit(1)
@@ -728,4 +1076,5 @@ func _process(_delta: float) -> void:
 		print("Failed to emit vector4i_signal")
 		return quit(1)
 
+	print("Success!")
 	return quit(0)
