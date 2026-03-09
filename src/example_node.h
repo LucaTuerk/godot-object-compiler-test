@@ -5,11 +5,9 @@
 #include "godot_cpp/variant/aabb.hpp"
 #include "godot_cpp/variant/typed_array.hpp"
 #include "godot_cpp/variant/typed_dictionary.hpp"
+#include "example_node.generated.h"
 
 using namespace godot;
-
-#include "example_node.generated.h"
-#include "godot_object_compiler/macros.h"
 
 GODOT_CLASS();
 class ExampleNode : public Node {
