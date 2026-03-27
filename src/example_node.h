@@ -19,6 +19,9 @@ public:
 	enum Enum { ENUM_VALUE };
 
 	GODOT_PROPERTY();
+	Variant variant_property;
+
+	GODOT_PROPERTY();
 	AABB aabb_property;
 
 	GODOT_PROPERTY();
@@ -143,6 +146,10 @@ public:
 
 	GODOT_PROPERTY();
 	Vector4i vector4i_property;
+
+	GODOT_PROPERTY("custom_variant_property", GetSet("get_custom_variant_property", "set_custom_variant_property"));
+	Variant get_custom_variant_property() const;
+	void set_custom_variant_property(const Variant &p_value);
 
 	GODOT_PROPERTY("custom_aabb_property", GetSet("get_custom_aabb_property", "set_custom_aabb_property"));
 	AABB get_custom_aabb_property() const;
@@ -325,6 +332,9 @@ public:
 	void set_custom_enum_property(Enum p_value);
 
 	GODOT_FUNCTION();
+	Variant variant_function() { return {}; }
+
+	GODOT_FUNCTION();
 	AABB aabb_function() { return {}; }
 
 	GODOT_FUNCTION();
@@ -449,6 +459,9 @@ public:
 
 	GODOT_FUNCTION();
 	Vector4i vector4i_function() { return {}; }
+
+	GODOT_SIGNAL();
+	void variant_signal(Variant p_param);
 
 	GODOT_SIGNAL();
 	void aabb_signal(AABB p_param);
@@ -586,6 +599,6 @@ public:
 
 	Ref<Resource> resource_property;
 
-	Node *node_property;
+	Node *node_property = nullptr;
 };
 GODOT_GENERATED_GLOBAL();

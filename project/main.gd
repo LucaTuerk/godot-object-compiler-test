@@ -14,6 +14,10 @@ func _ready() -> void:
 	add_child(example_node)
 
 func _process(_delta: float) -> void:
+	if not "variant_property" in example_node:
+		print("property not found")
+		return quit(1)
+	
 	if not "aabb_property" in example_node:
 		print("property not found")
 		return quit(1)
@@ -179,6 +183,10 @@ func _process(_delta: float) -> void:
 		return quit(1)
 
 	if not "vector4i_property" in example_node:
+		print("property not found")
+		return quit(1)
+		
+	if not "custom_variant_property" in example_node:
 		print("property not found")
 		return quit(1)
 
@@ -361,6 +369,10 @@ func _process(_delta: float) -> void:
 	if not "custom_enum_property" in example_node:
 		print("property not found")
 		return quit(1)
+		
+	if example_node.variant_property != example_node.custom_variant_property:
+		print("properties do not match")
+		return quit(1)
 
 	if example_node.aabb_property != example_node.custom_aabb_property:
 		print("properties do not match")
@@ -528,6 +540,10 @@ func _process(_delta: float) -> void:
 
 	if example_node.vector4i_property != example_node.custom_vector4i_property:
 		print("properties do not match")
+		return quit(1)
+		
+	if not "variant_function" in example_node:
+		print("function not found")
 		return quit(1)
 
 	if not "aabb_function" in example_node:
@@ -697,6 +713,10 @@ func _process(_delta: float) -> void:
 	if not "vector4i_function" in example_node:
 		print("function not found")
 		return quit(1)
+		
+	if not "variant_signal" in example_node:
+		print("signal not found")
+		return quit(1)
 
 	if not "aabb_signal" in example_node:
 		print("signal not found")
@@ -864,6 +884,11 @@ func _process(_delta: float) -> void:
 
 	if not "vector4i_signal" in example_node:
 		print("signal not found")
+		return quit(1)
+		
+	example_node.connect("variant_signal", func( _param : Variant ) : pass)
+	if example_node.emit_signal("variant_signal", example_node.variant_function()) != Error.OK:
+		print("Failed to emit variant_signal")
 		return quit(1)
 
 	example_node.connect("aabb_signal", func( _param : AABB ) : pass)
