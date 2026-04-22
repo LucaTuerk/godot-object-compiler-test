@@ -15,6 +15,10 @@ class ExampleNode : public Node {
 	GODOT_GENERATED_BODY();
 
 public:
+	GODOT_CATEGORY("Test Category");
+	GODOT_GROUP("Test Group");
+	GODOT_SUBGROUP("Test Subgroup");
+
 	GODOT_ENUM();
 	enum Enum { ENUM_VALUE };
 
