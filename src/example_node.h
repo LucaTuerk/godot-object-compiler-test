@@ -65,7 +65,7 @@ public:
 	int int_property = 0;
 
 	GODOT_PROPERTY();
-	long long_property = 0;
+	int64_t long_property = 0;
 
 	GODOT_PROPERTY();
 	NodePath node_path_property;
@@ -208,8 +208,8 @@ public:
 	void set_custom_int_property(const int &p_value);
 
 	GODOT_PROPERTY("custom_long_property", GetSet("get_custom_long_property", "set_custom_long_property"));
-	long get_custom_long_property() const;
-	void set_custom_long_property(const long &p_value);
+	int64_t get_custom_long_property() const;
+	void set_custom_long_property(const int64_t &p_value);
 
 	GODOT_PROPERTY("custom_node_path_property", GetSet("get_custom_node_path_property", "set_custom_node_path_property"));
 	NodePath get_custom_node_path_property() const;
@@ -378,7 +378,7 @@ public:
 	int int_function() { return {}; }
 
 	GODOT_FUNCTION();
-	long long_function() { return {}; }
+	int64_t long_function() { return {}; }
 
 	GODOT_FUNCTION();
 	NodePath node_path_function() { return {}; }
@@ -507,7 +507,7 @@ public:
 	void int_signal(int p_param);
 
 	GODOT_SIGNAL();
-	void long_signal(long p_param);
+	void long_signal(int64_t p_param);
 
 	GODOT_SIGNAL();
 	void node_path_signal(NodePath p_param);
