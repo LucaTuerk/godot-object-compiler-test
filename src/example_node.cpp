@@ -112,11 +112,11 @@ void ExampleNode::set_custom_int_property(const int &p_value) {
 	int_property = p_value;
 }
 
-long ExampleNode::get_custom_long_property() const {
+int64_t ExampleNode::get_custom_long_property() const {
 	return long_property;
 }
 
-void ExampleNode::set_custom_long_property(const long &p_value) {
+void ExampleNode::set_custom_long_property(const int64_t &p_value) {
 	long_property = p_value;
 }
 

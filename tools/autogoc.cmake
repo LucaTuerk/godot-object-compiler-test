@@ -30,13 +30,22 @@ function(target_autogoc TARGET ROOT_DIR)
   list(JOIN GODOT_CPP_INCLUDE_DIRECTORIES "," GODOT_CPP_INCLUDE_DIRECTORIES_JOINED)
 
   if (TARGET goc)
-    get_target_property(GOC_BINARY_DIR goc BINARY_DIR)
-    message(VERBOSE "GOC: Using goc target executable ${GOC_BINARY_DIR}/goc")
+    set(GOC_EXECUTABLE "$<TARGET_FILE:goc>")
+  elseif (DEFINED ENV{GOC_EXECUTABLE})
+    set(GOC_EXECUTABLE ENV{GOC_EXECUTABLE})
+  else ()
+    message(FATAL_ERROR "AUTOGOC: goc executable not found\n"
+                "Please set GOC_EXECUTABLE environment variable to the path of the goc executable\n"
+                "If you have the goc repository cloned, you can alternatively add the target subdirectory using add_subdirectory(<path_to_goc_repository>).\n"
+        )
+  endif ()
 
+  if (DEFINED GOC_EXECUTABLE)
+    message("GOC: Using goc executable ${GOC_EXECUTABLE}")
     add_custom_target(RunGOC
                 SOURCES ${SOURCES}
                 BYPRODUCTS ${GOC_GENERATED_FILES}
-                COMMAND ${GOC_BINARY_DIR}/goc${CMAKE_EXECUTABLE_SUFFIX} generate
+                COMMAND ${GOC_EXECUTABLE} generate
                 -R=${ROOT_DIR}
                 -P=.goc
                 -C=.goc/cache
@@ -49,30 +58,7 @@ function(target_autogoc TARGET ROOT_DIR)
                 DEPENDS goc godot-cpp generate_bindings ${SOURCES}
                 COMMENT "GOC: Generating Bindings"
         )
-  elseif (DEFINED ENV{GOC_EXECUTABLE})
-    message(VERBOSE "GOC: Using goc executable ${GOC_EXECUTABLE}")
-    add_custom_target(RunGOC
-                SOURCES ${SOURCES}
-                BYPRODUCTS ${GOC_GENERATED_FILES}
-                COMMAND $ENV{GOC_EXECUTABLE} generate
-                -R=${ROOT_DIR}
-                -P=.goc
-                -C=.goc/cache
-                -G=.goc/generated
-                -I=${INCLUDE_JOINED}
-                -S=${SOURCES_JOINED}
-                -GPP=${GODOT_CPP_INCLUDE_DIRECTORIES_JOINED}
-                -E=${GDEXTENSION_API_FILE}
-                WORKING_DIRECTORY ${BINARY_DIR}
-                DEPENDS godot-cpp generate_bindings ${SOURCES}
-                COMMENT "GOC: Generating Bindings"
-        )
-  else ()
-    message(FATAL_ERROR "AUTOGOC: goc executable not found\n"
-                "Please set GOC_EXECUTABLE environment variable to the path of the goc executable\n"
-                "If you have the goc repository cloned, you can alternatively add the target subdirectory using add_subdirectory(<path_to_goc_repository>).\n"
-        )
-  endif ()
+  endif()
 
   target_include_directories(${TARGET} PRIVATE
             ${GOC_GENERATED_DIR}
