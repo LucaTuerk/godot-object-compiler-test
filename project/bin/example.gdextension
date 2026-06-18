@@ -6,10 +6,10 @@ reloadable = false
 
 [libraries]
 ; Relative paths ensure that our GDExtension can be placed anywhere in the project directory.
-macos.single.debug = "./macos/libGOC_TEST.macos.template_debug.dylib"
-macos.double.debug = "./macos/libGOC_TEST.macos.template_debug.double.dylib"
-macos.single.release = "./macos/libGOC_TEST.macos.template_release.dylib"
-macos.double.release = "./macos/libGOC_TEST.macos.template_release.double.dylib"
+macos.single.debug = "./macos/GOC_TEST.macos.template_debug.arm64.dylib"
+macos.double.debug = "./macos/GOC_TEST.macos.template_debug.double.arm64.dylib"
+macos.single.release = "./macos/GOC_TEST.macos.template_release.arm64.dylib"
+macos.double.release = "./macos/GOC_TEST.macos.template_release.double.arm64.dylib"
 
 ios.arm64.single.debug = "./ios/libGOC_TEST.ios.template_debug.arm64.dylib"
 ios.arm64.double.debug = "./ios/libGOC_TEST.ios.template_debug.arm64.double.dylib"
