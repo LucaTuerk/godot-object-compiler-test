@@ -12,11 +12,11 @@ using namespace godot;
 
 void initialize_gdextension_types(ModuleInitializationLevel p_level)
 {
-	generated_register_module(p_level);
+	generated_initialize_extension(p_level);
 }
 
 void uninitialize_gdextension_types(ModuleInitializationLevel p_level) {
-	generated_unregister_module(p_level);
+	generated_uninitialize_extension(p_level);
 }
 
 extern "C"
