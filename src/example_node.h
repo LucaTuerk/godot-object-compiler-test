@@ -1,5 +1,6 @@
 #pragma once
 
+#include <stdint.h>
 #include "godot_cpp/classes/node.hpp"
 #include "godot_cpp/classes/resource.hpp"
 #include "godot_cpp/variant/aabb.hpp"
